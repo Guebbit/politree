@@ -4,7 +4,23 @@
 
 The internal representation should be a typed directed graph.
 
-### Primary entities
+```mermaid
+flowchart TD
+  A[Node] --> B[Edge]
+  A --> C[Position]
+  A --> D[Discussion item]
+  A --> E[Note or evidence]
+  A --> F[Revision history]
+  C --> F
+  D --> F
+  E --> F
+```
+
+## Why this matters
+
+The knowledge model is what makes the rest of the project possible. Without explicit entities and relations, Politree would fall back to a document archive with weak comparison and weak accountability.
+
+## Primary entities
 
 | Entity | Description | Notes |
 | --- | --- | --- |
@@ -130,3 +146,28 @@ Politree should borrow from Git conceptually without pretending political knowle
 | revert | rollback to prior accepted revision |
 
 The analogy is useful for traceability, but dangerous if taken too literally. Political statements are ambiguous, contextual, and negotiated. The system should expose Git-like affordances without assuming purely deterministic merges.
+
+## Related decisions
+
+- [Vision and principles](./vision-and-principles) explains why the model must preserve disagreement and provenance.
+- [Architecture](./architecture) explains which services must support this model.
+- [Comparison, consensus, and AI](./comparison-consensus-and-ai) explains how the model is used for alignment and synthesis.
+
+## How this affects implementation
+
+For an MVP, the model should stay constrained:
+
+- few node types
+- few edge types
+- typed discussions
+- explicit revision metadata
+- organization-specific overlays instead of a forced global schema
+
+## Alternatives and later extensions
+
+Later versions could support broader ontologies, stronger archival storage, and more flexible relation vocabularies. Those should come only after the constrained model proves readable and comparable.
+
+## Next reading
+
+- Continue to [Architecture](./architecture) for the supporting system design.
+- Continue to [Comparison, consensus, and AI](./comparison-consensus-and-ai) for how this model is used in practice.

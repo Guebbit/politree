@@ -10,6 +10,10 @@ The design response should be progressive disclosure:
 - then show evidence, arguments, and history
 - then show structural relations and comparison details
 
+## Why this matters
+
+Even a sound model and architecture will fail if the product makes complexity unreadable. This page translates the design into concrete user-facing expectations.
+
 ## Key user journeys
 
 ### 1. Organization registration
@@ -102,3 +106,22 @@ Useful product metrics:
 - diversity of evidence sources per topic
 
 Avoid vanity metrics like raw node counts or total comments. They encourage quantity over clarity.
+
+## Related decisions
+
+- [Architecture](./architecture) defines the services these workflows depend on.
+- [Governance and trust](./governance-and-trust) defines which control points must remain visible to users.
+- [Practical implementation](./practical-implementation) explains which journeys matter first.
+
+## How this affects implementation
+
+The first release should favor readable summaries, typed actions, and explicit state transitions over ambitious visualization. Progressive disclosure is more important than maximal graph exposure.
+
+## Alternatives and later extensions
+
+Later releases can add richer graph exploration, saved comparative views, and more advanced multilingual experiences. Those should extend a clear reading experience rather than replace it.
+
+## Next reading
+
+- Continue to [Roadmap, alternatives, and open questions](./risks-roadmap-and-open-questions) for deferred UX and scale challenges.
+- Return to [Large plan](./large-plan) to reconnect these flows to the broader project vision.

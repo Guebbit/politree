@@ -12,7 +12,19 @@ Two organizations may express the same idea in different ways:
 
 Any serious comparison model must handle all five cases.
 
+## Why this matters
+
+Comparison is the visible promise of Politree. If it becomes shallow, opaque, or overconfident, the whole system becomes politically misleading.
+
 ## Matching pipeline
+
+```mermaid
+flowchart TD
+  A[Candidate generation] --> B[Candidate scoring]
+  B --> C[Explanation generation]
+  C --> D[Human validation]
+  D --> E[Accepted match, rejection, or related-but-distinct result]
+```
 
 Recommended multi-stage pipeline:
 
@@ -139,3 +151,27 @@ AI must not:
 - homogenization pressure toward mainstream phrasing
 
 Mitigation requires model audits, confidence thresholds, prompt logging, reproducible evaluation sets, and an easy path for users to challenge AI output.
+
+## Related decisions
+
+- [Knowledge model](./knowledge-model) defines the structures comparison operates on.
+- [Governance and trust](./governance-and-trust) defines who can validate and appeal comparison outcomes.
+- [Practical implementation](./practical-implementation) explains why this work should follow a strong foundation phase.
+
+## How this affects implementation
+
+For the first release:
+
+- keep scores decomposed
+- require human validation for important alignments
+- treat AI as an assistant, not an authority
+- design comparison pages around explanation before ranking
+
+## Alternatives and later extensions
+
+Later versions can enrich candidate generation, multilingual matching, and public review signals. They should not introduce automatic consensus decisions.
+
+## Next reading
+
+- Continue to [Governance and trust](./governance-and-trust) for legitimacy controls.
+- Continue to [Roadmap, alternatives, and open questions](./risks-roadmap-and-open-questions) for deferred risks and future decisions.

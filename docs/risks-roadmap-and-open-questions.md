@@ -1,4 +1,17 @@
-# Risks, roadmap, and open questions
+# Roadmap, alternatives, and open questions
+
+## Why this page exists
+
+This page collects the parts of the design that should stay visible but should not be forced into the first implementation. It is the bridge between the large plan and the practical roadmap.
+
+## Phased roadmap
+
+```mermaid
+flowchart LR
+  A[Phase 1<br/>Foundation] --> B[Phase 2<br/>Comparison]
+  B --> C[Phase 3<br/>Consensus workflows]
+  C --> D[Phase 4<br/>Advanced trust and scale]
+```
 
 ## Major risks
 
@@ -99,6 +112,20 @@ Over time, even without malicious intent, synthesis workflows tend to compress n
 - AI debate summaries and contradiction detection
 - large-scale indexing and recommendation controls
 
+## Alternative paths
+
+### Simpler near-term option
+
+Stay focused on organization workspaces plus read-only comparison reports before attempting consensus workflows.
+
+### More ambitious near-term option
+
+Introduce merge proposals early, but only for a narrow subset of high-level shared values rather than for detailed policy nodes.
+
+### Deferred long-term option
+
+Revisit federation only after identity, moderation, and exchange formats are stable enough to survive cross-instance politics.
+
 ## Open questions
 
 1. Should consensus approvals be one-organization-one-vote, reputation-weighted, or topic-specific?
@@ -119,3 +146,14 @@ The safest product strategy is to start narrow:
 - slow, review-heavy consensus workflows
 
 If Politree tries to automate consensus too early, it will likely lose both trust and usefulness. If it stays disciplined about human validation, traceability, and dissent preservation, it could become a meaningful public infrastructure for coalition-building.
+
+## Related decisions
+
+- [Large plan](./large-plan) explains the overall destination.
+- [Practical implementation](./practical-implementation) explains the preferred delivery sequence.
+- [Governance and trust](./governance-and-trust) explains why many of these risks are political, not only technical.
+
+## Next reading
+
+- Return to [Overview](./index) for the full site map.
+- Revisit [Practical implementation](./practical-implementation) when turning this document into delivery milestones.

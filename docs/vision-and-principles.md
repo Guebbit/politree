@@ -6,6 +6,12 @@ Political organizations struggle to collaborate because they often lack shared s
 
 Politree should turn political programs into navigable knowledge so that collaboration can begin with explicit structure instead of impressionistic debate.
 
+## Why this matters
+
+This page explains the philosophical constraints behind the whole project. It should be read as the reason the rest of the system is shaped the way it is.
+
+If the core values are wrong, the graph model, comparison engine, and governance system will all optimize for the wrong thing.
+
 ## Foundational principles
 
 ### 1. Transparency by default
@@ -78,3 +84,27 @@ Politree is successful if it helps users answer:
 - which consensus proposals are broad enough to matter and precise enough to defend?
 
 It is not successful merely because it accumulates nodes, discussions, or AI-generated suggestions.
+
+## Related decisions
+
+- [Large plan](./large-plan) places these principles in the overall project narrative.
+- [Knowledge model](./knowledge-model) turns these principles into data structures.
+- [Governance and trust](./governance-and-trust) applies these principles to legitimacy and moderation.
+
+## How this affects implementation
+
+These principles imply a few practical constraints:
+
+- publication must be distinguishable from drafting
+- disagreement must remain visible in the data model
+- consensus workflows must be slower than editing workflows
+- AI should assist review, not replace it
+
+## Alternatives and later extensions
+
+A simpler product could ignore minority preservation, provenance, or public accountability. That would likely make it faster to build, but it would move the platform toward shallow alignment scoring rather than credible coalition infrastructure.
+
+## Next reading
+
+- Continue to [Knowledge model](./knowledge-model) for the structural consequences.
+- Continue to [Practical implementation](./practical-implementation) for the delivery consequences.

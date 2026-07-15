@@ -4,6 +4,19 @@
 
 Politree is not just a publishing tool. It creates public interpretations of political proximity, evidence quality, and consensus. That makes governance part of the core product, not an administrative add-on.
 
+```mermaid
+flowchart TD
+  A[User action] --> B[Public trace]
+  B --> C[Flag or review]
+  C --> D[Moderator or organization decision]
+  D --> E[Appeal path]
+  E --> F[Visible final state]
+```
+
+## Why this matters
+
+Without legitimacy features, the platform would quickly be seen as a scoring machine that hides politics behind interface decisions. Governance is how the system stays contestable and auditable.
+
 ## Organization verification
 
 Recommended verification levels:
@@ -92,3 +105,22 @@ Recommended controls:
 - organization-level sanctions for repeated manipulation
 
 These measures help, but none solve coordinated capture by powerful actors. That risk must be treated as persistent and partly social rather than fully technical.
+
+## Related decisions
+
+- [Vision and principles](./vision-and-principles) explains why transparency and minority preservation are non-negotiable.
+- [Comparison, consensus, and AI](./comparison-consensus-and-ai) explains which actions need review and appeal.
+- [UX and operations](./ux-and-operations) explains how these controls should appear to users.
+
+## How this affects implementation
+
+The first releases should include verification tiers, typed moderation states, visible audit trails, and appealable decisions before adding more advanced public influence systems.
+
+## Alternatives and later extensions
+
+Later versions can add stronger reputation signals, deeper anti-brigading systems, and more specialized review bodies. Those should build on transparent base workflows rather than replace them.
+
+## Next reading
+
+- Continue to [UX and operations](./ux-and-operations) for user-facing workflows.
+- Continue to [Roadmap, alternatives, and open questions](./risks-roadmap-and-open-questions) for long-term governance risks.
