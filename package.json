@@ -1,0 +1,25 @@
+{
+  "name": "politree",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VitePress design documentation for the Politree project",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guebbit/politree.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guebbit/politree/issues"
+  },
+  "homepage": "https://github.com/Guebbit/politree#readme",
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.18"
+  }
+}
