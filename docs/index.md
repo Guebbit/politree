@@ -1,95 +1,78 @@
 # Politree
 
-> First official design document for an open-source platform that helps political organizations understand agreement, disagreement, and paths toward convergence.
+> A documentation site for a platform that helps political organizations map agreement, disagreement, and possible coalition paths without hiding minority views.
 
-## Status
+## Start here
 
-This document is intentionally ambitious and intentionally critical. It treats the project as a socio-technical system, not just a graph database with a discussion layer.
+This site is now organized in four reading layers:
 
-## Problem statement
+1. **Large plan** — what Politree is trying to become and why it matters
+2. **Core ideas** — the product principles, knowledge model, comparison logic, and governance model
+3. **Practical implementation** — what to build first, what to defer, and what trade-offs to accept
+4. **Later options** — alternative designs, scaling questions, and open risks
 
-Political programs are usually published as flat texts, press releases, and campaign materials. That makes it hard to answer basic coordination questions:
+## Documentation map
 
-- Which ideas are already shared across organizations?
-- Which disagreements are semantic, structural, or substantive?
-- Which policies conflict with stated values?
-- Which coalitions are plausible without forcing artificial uniformity?
+```mermaid
+flowchart TD
+  A[Overview] --> B[Large plan]
+  B --> C[Core ideas]
+  B --> D[Practical implementation]
+  C --> E[Vision and principles]
+  C --> F[Knowledge model]
+  C --> G[Comparison, consensus, and AI]
+  C --> H[Governance and trust]
+  D --> I[Architecture]
+  D --> J[UX and operations]
+  D --> K[Roadmap, alternatives, and open questions]
+  E --> K
+  F --> I
+  G --> H
+  H --> K
+```
+
+## What problem Politree is solving
+
+Political programs are usually published as flat texts, campaign promises, and disconnected debates. That makes it hard to answer a few practical questions:
+
+- which ideas are already shared across organizations?
+- which disagreements are semantic, structural, or substantive?
+- which policies conflict with stated values?
+- which coalitions are plausible without flattening dissent?
 
 Politree proposes a different model: represent political thought as structured, versioned knowledge that can be compared, discussed, and cautiously merged.
 
-## Vision
+## Reading paths
 
-Politree should help organizations:
+| If you want to understand... | Start here | Then continue with... |
+| --- | --- | --- |
+| the end-state vision | [Large plan](./large-plan) | [Vision and principles](./vision-and-principles), [Roadmap, alternatives, and open questions](./risks-roadmap-and-open-questions) |
+| the conceptual model | [Vision and principles](./vision-and-principles) | [Knowledge model](./knowledge-model), [Comparison, consensus, and AI](./comparison-consensus-and-ai) |
+| how this could be built | [Practical implementation](./practical-implementation) | [Architecture](./architecture), [UX and operations](./ux-and-operations) |
+| governance and legitimacy | [Governance and trust](./governance-and-trust) | [Comparison, consensus, and AI](./comparison-consensus-and-ai), [Roadmap, alternatives, and open questions](./risks-roadmap-and-open-questions) |
 
-- publish a canonical knowledge graph of their positions
+## Core promises
+
+Politree should:
+
+- publish a canonical knowledge graph of an organization's positions
 - compare that graph with others
 - preserve evidence and disagreement next to each idea
-- explore coalition opportunities without erasing minority views
+- support coalition exploration without erasing minority views
 - evolve a slower, community-governed consensus graph
-
-## Non-goals
 
 Politree should **not**:
 
 - decide which political positions are correct
 - automatically merge positions through AI
 - optimize for engagement over understanding
-- flatten principled disagreement into a single compatibility number
-- replace internal democratic processes of participating organizations
+- flatten disagreement into a single number
+- replace democratic processes inside participating organizations
 
-## Design axioms
+## Big-picture guide
 
-1. **Neutral software, contextual instances.** The platform itself should remain politically neutral, even if an instance serves a specific political family.
-2. **Agreement discovery over opinion homogenization.** The goal is visibility and negotiation, not ideological compression.
-3. **Evidence informs politics; it does not mechanically settle it.**
-4. **Human validation is required for semantic and structural change.**
-5. **Minority positions must remain visible after coalition-building.**
-6. **Governance is a product feature, not an afterthought.**
-
-## Conceptual model
-
-```mermaid
-flowchart LR
-  A[Organization graph] --> B[Comparison layer]
-  C[Organization graph] --> B
-  D[Organization graph] --> B
-  B --> E[Dialogue, review, and merge proposals]
-  E --> F[Consensus graph]
-  G[Evidence and discussions] --> A
-  G --> C
-  G --> D
-  G --> F
-```
-
-## Why a graph instead of a document
-
-The tree-like interface is useful for navigation, but the underlying model should be a directed graph:
-
-- one idea can belong to multiple thematic branches
-- the same policy may be justified by different values
-- supporting evidence may connect to many nodes
-- conflicts and alternatives are often cross-cutting rather than hierarchical
-
-The main trade-off is usability. Graphs are more expressive than documents, but they are also harder to govern, compare, and explain. Politree should therefore expose tree views, filtered maps, and scoped discussions on top of a graph model rather than showing a raw graph everywhere.
-
-## Core tensions
-
-The project must continuously manage these tensions:
-
-| Tension | Why it matters | Design response |
-| --- | --- | --- |
-| openness vs manipulation resistance | public systems attract spam, brigading, and identity fraud | verification, rate limits, reputation, appeals |
-| semantic flexibility vs comparability | natural language is expressive but ambiguous | canonical node types, explanations, human review |
-| convergence vs minority preservation | coalitions need synthesis, democracy needs dissent | layered positions, minority reports, forkable proposals |
-| AI assistance vs human legitimacy | automation scales, but legitimacy requires accountability | AI suggestions only, never automatic authority |
-| transparency vs cognitive overload | traceability is valuable, but too much detail reduces participation | progressive disclosure, summaries, role-aware views |
-
-## Reading guide
-
-- Start with [Vision and principles](./vision-and-principles) for the philosophical foundation.
-- Read [Knowledge model](./knowledge-model) for data structures and semantics.
-- Read [Architecture](./architecture) for system layers and scaling assumptions.
-- Read [Comparison, consensus, and AI](./comparison-consensus-and-ai) for matching, scoring, and review workflows.
-- Read [Governance and trust](./governance-and-trust) for moderation and legitimacy.
-- Read [UX and operations](./ux-and-operations) for user journeys and product behavior.
-- Read [Risks, roadmap, and open questions](./risks-roadmap-and-open-questions) for failure modes and unresolved decisions.
+- Read [Large plan](./large-plan) for the full narrative and major phases.
+- Read [Vision and principles](./vision-and-principles) for the philosophical foundation.
+- Read [Knowledge model](./knowledge-model) for the data structures and semantics.
+- Read [Practical implementation](./practical-implementation) for what to build now versus later.
+- Read [Roadmap, alternatives, and open questions](./risks-roadmap-and-open-questions) for deferred complexity and unresolved design choices.

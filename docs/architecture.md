@@ -32,6 +32,10 @@ flowchart TD
   C --> B
 ```
 
+## Why this matters
+
+The architecture should mirror the political logic of the product. Organization editing, comparison, and consensus belong in separate layers because they have different performance needs and different legitimacy requirements.
+
 ## Layer A — Organization workspace
 
 This is the canonical home of an organization's knowledge graph.
@@ -137,3 +141,27 @@ Unbounded threads become unusable. The design should include:
 The first release should target a single multi-tenant hosted instance model. Federation is attractive in theory but too costly at the start because identity, moderation, and semantic consistency are already difficult in a central deployment.
 
 Long-term, federation can be reconsidered once identity, exchange formats, and cross-instance trust protocols are mature.
+
+## Related decisions
+
+- [Practical implementation](./practical-implementation) explains why this architecture should be delivered in phases.
+- [Knowledge model](./knowledge-model) defines the core entities each service must support.
+- [UX and operations](./ux-and-operations) explains the user-facing behavior these services enable.
+
+## How this affects implementation
+
+A first release can stay simple operationally while still honoring the conceptual architecture:
+
+- one hosted deployment
+- one transactional source of truth
+- read models added only where needed
+- clear service boundaries in the design even if the prototype is still compact
+
+## Alternatives and later extensions
+
+A monolithic prototype is acceptable if it preserves the conceptual separation of workspace, comparison, and consensus concerns. Federation and heavier distributed systems should wait until governance and interchange formats are mature.
+
+## Next reading
+
+- Continue to [UX and operations](./ux-and-operations) for the workflow consequences.
+- Continue to [Roadmap, alternatives, and open questions](./risks-roadmap-and-open-questions) for the scale-related future questions.
